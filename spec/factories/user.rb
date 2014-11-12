@@ -13,5 +13,9 @@ FactoryGirl.define do
 
     password 'cosmos123'
     password_confirmation 'cosmos123'
+
+    trait :admin do
+      admin true
+    end
   end
 end

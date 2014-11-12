@@ -1,9 +1,12 @@
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Canable::Ables
+  include Canable::Cans
 
-  field :email, type: String
+  field :email,    type: String
   field :username, type: String
+  field :admin,    type: Boolean, default: false
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -25,4 +28,20 @@ class User
   validates :username, presence: true, uniqueness: true
 
   has_many :notes
+
+  def viewable_by?(u)
+    u == self || u.admin?
+  end
+
+  def creatable_by?(u)
+    true
+  end
+
+  def updatable_by?(u)
+    u == self || u.admin?
+  end
+
+  def destroyable_by?(u)
+    u == self || u.admin?
+  end
 end
