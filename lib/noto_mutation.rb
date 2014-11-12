@@ -10,4 +10,8 @@ class NotoMutation < Mutations::Command
       end
     end
   end
+
+  def unauthorized!
+    add_error(:current_user, :unauthorized, 'user cannot perform this action')
+  end
 end
