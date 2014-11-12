@@ -13,6 +13,8 @@ gem 'canable'
 
 gem 'mutations'
 
+gem 'redcarpet'
+
 gem 'haml-rails'
 
 gem 'sass-rails', '~> 4.0.3'

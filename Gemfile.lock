@@ -152,6 +152,7 @@ GEM
     rake (10.3.2)
     rdoc (4.1.2)
       json (~> 1.4)
+    redcarpet (3.2.0)
     responders (1.1.1)
       railties (>= 3.2, < 4.2)
     rspec-core (3.1.7)
@@ -236,6 +237,7 @@ DEPENDENCIES
   pry-rails
   puma
   rails (= 4.1.7)
+  redcarpet
   rspec-rails (>= 3.0.0)
   rubocop
   sass-rails (~> 4.0.3)
