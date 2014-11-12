@@ -8,7 +8,7 @@ gem 'mongoid', '>= 4.0.0'
 
 gem 'turbolinks'
 
-gem 'sorcery'
+gem 'devise'
 gem 'canable'
 
 gem 'mutations'
