@@ -26,5 +26,15 @@ module Noto
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    config.paths.add 'lib/noto', glob: '**/*.rb'
+    config.autoload_paths += %W(#{config.root}/lib)
+
+    config.assets.paths << "#{Rails.root}/app/assets/css"
+    config.assets.paths << "#{Rails.root}/app/assets/img"
+    config.assets.paths << "#{Rails.root}/app/assets/jsc"
+    config.assets.paths << "#{Rails.root}/app/assets/fonts"
+
+    config.compass.require 'susy'
   end
 end
