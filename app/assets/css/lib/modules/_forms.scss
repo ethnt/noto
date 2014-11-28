@@ -1,0 +1,40 @@
+/*
+  Noto.
+    file: css/lib/modules/_forms.scss
+*/
+
+form {
+  input[type="text"], input[type="email"], input[type="password"] {
+    background: $light-grey;
+    border: none;
+    display: block;
+    font-family: $mono;
+    font-size: 1em;
+    outline: none;
+    padding: rhythm(0.25);
+    width: 98%;
+
+    &:focus {
+      background: darken($light-grey, 5%);
+    }
+  }
+
+  label {
+    @include adjust-font-size-to(12px);
+
+    color: $grey;
+    text-transform: uppercase;
+  }
+
+  .field {
+    margin-bottom: rhythm(0.5);
+  }
+
+  .links {
+    margin-top: rhythm(0.5);
+    
+    li {
+      display: inline-block;
+    }
+  }
+}

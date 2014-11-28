@@ -1,0 +1,79 @@
+/*
+  Noto.
+    file: css/application.scss
+*/
+
+@import "lib/base";
+
+/*
+  = Appendix
+    I. Universal
+*/
+
+/*
+  I. Universal
+*/
+
+body {
+  background: $base;
+  color: $text;
+  font-family: $sans-serif;
+  font-weight: 400;
+  font-variant-ligatures: common-ligatures;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+
+  &:hover {
+    color: darken($blue, 5%);
+  }
+}
+
+h1 {
+  @include adjust-font-size-to(18px);
+
+  font-weight: 500;
+
+  a {
+    color: $red;
+
+    &:hover {
+      color: darken($red, 5%);
+    }
+  }
+}
+
+
+/*
+  II. Header
+*/
+
+header#header {
+  @include container;
+
+  margin-bottom: rhythm(2);
+  margin-top: rhythm(1);
+
+  aside {
+    @include span(4 of 12);
+  }
+
+  nav {
+    @include span(last 8 of 12);
+
+    ul {
+      float: right;
+
+      li {
+        display: inline-block;
+
+        & + li {
+          margin-left: rhythm(1);
+        }
+      }
+    }
+  }
+}

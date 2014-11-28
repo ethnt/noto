@@ -1,9 +1,10 @@
 class Note
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Canable::Ables
 
   field :title,     type: String, default: 'Untitled'
-  field :text,      type: String
+  field :text,      type: String, default: ''
   field :html,      type: String
   field :permalink, type: String
 
@@ -12,6 +13,22 @@ class Note
   validates :title, presence: true
 
   belongs_to :user
+
+  def viewable_by?(u)
+    u == self.user || u.admin?
+  end
+
+  def creatable_by?(u)
+    true
+  end
+
+  def updatable_by?(u)
+    u == self.user || u.admin?
+  end
+
+  def destroyable_by?(u)
+    u == self.user || u.admin?
+  end
 
   protected
 

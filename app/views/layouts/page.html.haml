@@ -1,0 +1,37 @@
+!!!5
+%html{lang: 'en'}
+  %head
+    %title Noto
+
+    = stylesheet_link_tag 'page', media: 'all', 'data-turbolinks-track' => true
+
+    = csrf_meta_tags
+
+    = javascript_include_tag 'page', 'data-turbolinks-track' => true
+
+    %script{src: "//use.typekit.net/idh3uav.js"}
+    :coffeescript
+      try
+        Typekit.load()
+      catch error
+        console.log error
+
+  %body
+    %header#header
+      %nav
+        %ul
+          %li= link_to "Login with Dropbox"
+          -# %li= link_to "Join", join_path
+          -# %li= link_to "Login", login_path
+      %h1= link_to "Noto", root_path
+
+    %main{role: 'main'}
+      = yield
+
+    %footer#footer
+      %aside
+        %p= "&copy; #{Time.now.year} <a href='#'>Noto</a>.".html_safe
+      %nav
+        %ul
+          %li= link_to "About", about_path
+          %li= link_to "Support"

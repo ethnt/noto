@@ -1,0 +1,7 @@
+.hero
+  %h2 Notes, simplified.
+  %p Noto is a simple way to take notes and keep them with you, wherever you are.
+  %nav
+    %ul
+      %li= link_to "Login with Dropbox", user_omniauth_authorize_path(:dropbox_oauth2), class: "btn btn-blue"
+      -# %li= link_to "Login", login_path, class: "btn"

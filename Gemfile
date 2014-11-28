@@ -11,15 +11,20 @@ gem 'turbolinks'
 gem 'devise'
 gem 'canable'
 
+gem 'dotenv-rails'
+
+gem 'omniauth'
+gem 'omniauth-dropbox-oauth2'
+
 gem 'mutations'
 
 gem 'redcarpet'
 
 gem 'haml-rails'
 
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.0.beta1'
 gem 'compass-rails'
-gem 'susy'
+gem 'susy', '> 2.0.0'
 
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'

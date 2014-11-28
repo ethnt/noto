@@ -1,0 +1,36 @@
+.notes {
+  header {
+    @include container;
+    @include trailing-border(1px, 0.5);
+
+    border-color: $light-grey;
+
+    nav {
+      float: right;
+    }
+  }
+
+  article.note {
+    @include container;
+    @include trailing-border(1px, 0);
+
+    border-color: $light-grey;
+    padding-top: rhythm(0.15);
+
+    &:first-child {
+      @include leading-border(1px, 0);
+    }
+
+    section {
+      @include span(8 of 12);
+    }
+
+    aside {
+      @include span(last 4 of 12);
+
+      p {
+        float: right;
+      }
+    }
+  }
+}

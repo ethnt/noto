@@ -1,0 +1,41 @@
+/*
+  Noto.
+    file: css/lib/modules/_buttons.scss
+*/
+
+
+a.btn, input.btn {
+  @include adjust-font-size-to(14px);
+  @include border-radius(1px);
+
+  background: $grey;
+  border: none;
+  display: inline-block;
+  color: $base;
+  font-family: $sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: rhythm(0.25) rhythm(0.5) rhythm(0.15);
+
+  &:hover {
+    background: darken($grey, 5%);
+    color: $base;
+    cursor: pointer;
+  }
+
+  &.round {
+    @include border-radius(50%);
+  }
+}
+
+@mixin btn-color($name, $color) {
+  a.btn.btn-#{$name}, input.btn.btn-#{$name} {
+    background: $color;
+
+    &:hover {
+      background: darken($color, 5%);
+    }
+  }
+}
+
+@include btn-color(blue, $blue);

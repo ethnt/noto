@@ -1,0 +1,27 @@
+!!!5
+%html{lang: 'en'}
+  %head
+    %title Noto
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+
+    = csrf_meta_tags
+
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+
+    %script{src: "//use.typekit.net/idh3uav.js"}
+    :coffeescript
+      try
+        Typekit.load()
+      catch error
+        console.log error
+
+  %body
+    %header#header
+      %aside
+        %h1= link_to 'Noto', root_path
+      %nav
+        %ul
+          %li= link_to 'Logout', destroy_user_session_path, method: :delete
+    %main{role: 'main'}
+      = yield

@@ -1,21 +1,21 @@
-%h2 Sign up
+%h2 Join
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
+  = render :partial => 'partials/flash'
+  .field
+    = f.label :name
+    = f.email_field :name, autofocus: true
+  .field
+    = f.label :username
+    = f.email_field :username
   .field
     = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
+    = f.email_field :email
   .field
-    = f.label :password
-    - if @validatable
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
+    = f.label :password, "Password <em>(#{@minimum_password_length} characters minimum</em>)".html_safe
     = f.password_field :password, autocomplete: "off"
   .field
     = f.label :password_confirmation
-    %br/
     = f.password_field :password_confirmation, autocomplete: "off"
   .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+    = f.submit "Join", class: "btn btn-blue"
+  -# = render "devise/shared/links"

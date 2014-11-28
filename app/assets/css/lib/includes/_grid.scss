@@ -1,0 +1,24 @@
+/*
+  Noto.
+    file: css/lib/includes/_grid.scss
+*/
+
+@import "compass/layout";
+@import "susy";
+
+$total-columns: 12;
+$column-width: 3em;
+$gutter-width: 1.25em;
+
+$susy: (
+    columns: $total-columns,
+    gutters: $gutter-width / $column-width,
+    column-width: $column-width
+);
+
+$mobile-small: 240px;
+$mobile-large: 320px;
+$tablet-small: 480px;
+$tablet-large: 768px;
+$screen-small: 1024px;
+$screen-large: 1280px;

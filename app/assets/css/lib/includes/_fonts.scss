@@ -1,0 +1,13 @@
+/*
+  Noto.
+    file: css/lib/includes/_fonts.scss
+*/
+
+@import "compass/typography/vertical_rhythm";
+
+$sans-serif: "fira-sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+$mono: "fira-mono";
+// $mono: "inconsolata";
+// $mono: "droid-sans-mono";
+
+@include establish-baseline($base-font-size);

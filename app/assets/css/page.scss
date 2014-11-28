@@ -1,0 +1,163 @@
+/*
+  Noto.
+    file: css/application.scss
+*/
+
+@import "lib/base";
+
+/*
+  = Appendix
+    I. Universal
+*/
+
+/*
+  I. Universal
+*/
+
+body {
+  background: $base;
+  color: $text;
+  font-family: $sans-serif;
+  font-weight: 400;
+  font-variant-ligatures: common-ligatures;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+}
+
+h1 {
+  @include adjust-font-size-to(24px);
+}
+
+h2 {
+  @include adjust-font-size-to(36px);
+}
+
+
+/*
+  II. Header
+*/
+
+header#header {
+  margin-bottom: rhythm(2);
+  margin-top: rhythm(1);
+
+  h1 {
+    @include container;
+
+    margin-top: rhythm(1);
+    text-align: center;
+
+    a {
+      color: $red;
+      font-weight: 500;
+    }
+  }
+
+  nav {
+    @include container;
+
+    ul {
+      float: right;
+
+      li {
+        display: inline-block;
+
+        & + li {
+          margin-left: rhythm(0.5);
+        }
+
+        a {
+          color: $grey;
+
+          &:hover {
+            color: $dark-grey;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/*
+  III. Main
+*/
+
+main {
+  @include container;
+
+  // margin-top: rhythm(2);
+
+  h2 {
+    margin-bottom: rhythm(0.5);
+  }
+
+  .hero {
+    margin-bottom: rhythm(6);
+    margin-top: rhythm(2);
+    text-align: center;
+
+    nav {
+      margin-top: rhythm(1);
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
+
+  .page {
+    margin-bottom: rhythm(1);
+  }
+}
+
+
+/*
+  IV. Footer
+*/
+
+footer#footer {
+  @include container;
+
+  color: $grey;
+  margin-bottom: rhythm(2);
+  margin-top: rhythm(3);
+
+  a {
+    color: $dark-grey;;
+
+    &:hover {
+      color: darken($dark-grey, 5%);
+    }
+  }
+
+  aside {
+    @include span(6 of 12);
+
+    p {
+      @include adjust-font-size-to(14px);
+    }
+  }
+
+  nav {
+    @include span(last 6 of 12);
+
+    ul {
+      float: right;
+
+      li {
+        @include adjust-font-size-to(14px);
+
+        display: inline-block;
+
+        & + li {
+          margin-left: rhythm(1);
+        }
+      }
+    }
+  }
+}

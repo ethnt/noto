@@ -1,0 +1,13 @@
+- if flash[:notice]
+  .flash.notice
+    %p= flash[:notice]
+
+- if flash[:error]
+  .flash.error
+    %p= flash[:error]
+
+- if defined?(resource) && !resource.errors.blank?
+  - messages = resource.errors.full_messages.map { |msg| content_tag(:p, msg) }.join
+
+  .flash.error
+    = messages.html_safe
